@@ -5,41 +5,41 @@ public class HeapSortParctice {
 
 		buildMaxHeap(arr);
 		
-		//Since this max heap.So First Element of array is Max Number
-		int firstElement = 0;
-		int curLastIndex = arr.length - 1;
+		//Since this is max heap.So First Element of array is Max Number
+		int firstElementIndex = 0;
+		int curLastElementIndex = arr.length - 1;
 		
-		for (; curLastIndex >= 0; curLastIndex--) {
+		for (; curLastElementIndex >= 0; curLastElementIndex--) {
 			//Placing the max element at Index 0 to last Index and last Element to Index 0 for sorting
 			// This will disturb max heap property. So we have to heapify
-			swap(arr, firstElement, curLastIndex);
+			swap(arr, firstElementIndex, curLastElementIndex);
 			//heapify to maintain max heap property
-			heapify(arr, curLastIndex, firstElement);
+			heapify(arr, curLastElementIndex-1, firstElementIndex);
 		}
 		return arr;
 	}
-	private static void heapify(int[] arr, int length, int i) {
+	private static void heapify(int[] arr, int lastElementIndex, int heapifyElementIndex) {
 
-		int largestPointer = i;
-		int leftPointer = 2 * i + 1;
-		int rightPointer = 2 * i + 2;
+		int largestPointer = heapifyElementIndex;
+		int leftPointer = 2 * heapifyElementIndex + 1;
+		int rightPointer = 2 * heapifyElementIndex + 2;
 
-		if (leftPointer < length && arr[leftPointer] > arr[largestPointer]) {
+		if (leftPointer <= lastElementIndex && arr[leftPointer] > arr[largestPointer]) {
 			largestPointer = leftPointer;
 		}
 
-		if (rightPointer < length && arr[rightPointer] > arr[largestPointer]) {
+		if (rightPointer <= lastElementIndex && arr[rightPointer] > arr[largestPointer]) {
 			largestPointer = rightPointer;
 		}
 
-		if (largestPointer != i) {
-			swap(arr, largestPointer, i);
-			heapify(arr, length, largestPointer);
+		if (largestPointer != heapifyElementIndex) {
+			swap(arr, largestPointer, heapifyElementIndex);
+			heapify(arr, lastElementIndex, largestPointer);
 		}
 	}
 	private static void buildMaxHeap(int[] arr) {
-		for (int i = (arr.length / 2) - 1; i >= 0; i--) {
-			heapify(arr, arr.length, i);
+		for (int i = (arr.length -1 / 2); i >= 0; i--) {
+			heapify(arr, arr.length-1, i);
 		}
 	}
 	private static void swap(int[] arr, int index1, int index2) {
@@ -51,6 +51,7 @@ public class HeapSortParctice {
 	}
 	
 	public static void main(String[] args) {
+		//int[] arr = { 9, 5, 3, 4, 10, 1, 2 ,11};
 		int[] arr = { 9, 5, 3, 4, 10, 1, 2 };
 
 		System.out.print("Input UnSorted Array :: ");
