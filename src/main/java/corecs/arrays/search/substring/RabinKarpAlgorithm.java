@@ -76,9 +76,9 @@ public class RabinKarpAlgorithm {
     /* Driver program to test above function */
     public static void main(String[] args) 
     { 
-        String txt = "hash and re-hash is the key of this algorithm."; 
-        String pat = "hash"; 
+    	String inputString = "hash and re-hash is the key of this algorithm.";
+		String subStringPattern = "hash"; 
         int primeNo = 101; // A prime number 
-        search(pat, txt, primeNo); 
+        search(subStringPattern, inputString, primeNo); 
     } 
 }
