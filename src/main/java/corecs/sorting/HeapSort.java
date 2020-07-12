@@ -1,4 +1,4 @@
-package corecs;
+package corecs.sorting;
 
 //Heap Sort in Java
 

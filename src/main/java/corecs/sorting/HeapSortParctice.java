@@ -1,4 +1,4 @@
-package corecs;
+package corecs.sorting;
 public class HeapSortParctice {
 	
 	public static int[] heapSort(int[] arr) {

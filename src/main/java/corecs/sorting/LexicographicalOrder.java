@@ -1,4 +1,4 @@
-package corecs;
+package corecs.sorting;
 
 import java.util.HashMap;
 import java.util.Map;
