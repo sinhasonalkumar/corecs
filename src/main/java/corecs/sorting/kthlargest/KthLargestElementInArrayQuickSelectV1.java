@@ -2,16 +2,15 @@ package corecs.sorting.kthlargest;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class KthLargestElementInArrayQuickSelect {
+public class KthLargestElementInArrayQuickSelectV1 {
 	
-	private static Integer kthLargestElement = null;
 	
 	public static void main(String[] args) {
 		
 		// 1,2,3,4,5,9,10
 		int[] arr = {10,3,1,4,9,2,5};
 		
-		quickSelectKthlargestElement(arr, 3);
+		Integer kthLargestElement = quickSelectKthlargestElement(arr, 3);
 		
 		System.out.println("kthLargestElement -> " + kthLargestElement);
 	}
@@ -24,17 +23,15 @@ public class KthLargestElementInArrayQuickSelect {
 		
 		int kIndex = k-1;
 		
-		helper(arr, kIndex, startIndex, endIndex);
-		
-		return kthLargestElement;
+		return helper(arr, kIndex, startIndex, endIndex);
 		
 	}
 	
-	public static void helper(int[] arr, int kIndex , Integer startIndex, Integer endIndex) {
+	public static Integer helper(int[] arr, int kIndex , Integer startIndex, Integer endIndex) {
 		
 		
 		if(startIndex > endIndex) {
-			return;
+			return null;
 		}
 
 		int randomIndex = ThreadLocalRandom.current().nextInt(startIndex, endIndex+1);
@@ -62,13 +59,13 @@ public class KthLargestElementInArrayQuickSelect {
 		swap(arr, startIndex, smallerValuePointer);
 		
 		if(kIndex == smallerValuePointer) {
-			kthLargestElement =  arr[smallerValuePointer];
-			return;
+			return arr[smallerValuePointer];
+		
 		}else {
 			if(kIndex > smallerValuePointer) {
-				helper(arr, kIndex, smallerValuePointer +1 , endIndex);
+				return helper(arr, kIndex, smallerValuePointer +1 , endIndex);
 			}else {
-				helper(arr, kIndex, startIndex , smallerValuePointer-1);
+				return helper(arr, kIndex, startIndex , smallerValuePointer-1);
 			}
 		}
 	}
