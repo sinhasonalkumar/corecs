@@ -1,4 +1,4 @@
-package corecs.sorting;
+package corecs.sorting.kthlargest;
 
 import java.util.PriorityQueue;
 import java.util.Queue;
