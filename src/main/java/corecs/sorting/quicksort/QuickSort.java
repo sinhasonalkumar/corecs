@@ -1,4 +1,4 @@
-package corecs.sorting;
+package corecs.sorting.quicksort;
 
 import java.util.concurrent.ThreadLocalRandom;
 

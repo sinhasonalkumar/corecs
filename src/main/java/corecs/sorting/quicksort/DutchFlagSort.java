@@ -1,10 +1,11 @@
-package corecs.sorting;
+package corecs.sorting.quicksort;
 
 public class DutchFlagSort {
 
 	public static void main(String[] args) {
 
-		char[] balls = { 'G', 'B', 'R' };
+		char[] balls = { 'G','B','R','B','G','R','B','B' };
+		//char[] balls = { 'R','B','R','B','G','R','B','B' };
 
 		dutch_flag_sort(balls);
 
@@ -31,17 +32,16 @@ public class DutchFlagSort {
 				runningGreenPointer++;
 			} else {
 				if (balls[runningGreenPointer] == 'R') {
-					tmp = balls[runningGreenPointer];
-					balls[runningGreenPointer] = balls[leftRedPointer];
-					balls[leftRedPointer] = tmp;
-
+					
+					swap(balls, runningGreenPointer, leftRedPointer);
+					
 					runningGreenPointer++;
 					leftRedPointer++;
+					
 				} else {
 					if (balls[runningGreenPointer] == 'B') {
-						tmp = balls[runningGreenPointer];
-						balls[runningGreenPointer] = balls[rightBluePointer];
-						balls[rightBluePointer] = tmp;
+						
+						swap(balls, runningGreenPointer, rightBluePointer);
 
 						rightBluePointer--;
 					}
@@ -50,6 +50,14 @@ public class DutchFlagSort {
 
 		}
 
+	}
+	
+	public static void swap(char[] arr, int index1, int index2) {
+		
+		char tmp = arr[index1];
+		arr[index1] = arr[index2];
+		arr[index2] = tmp;
+		
 	}
 
 }

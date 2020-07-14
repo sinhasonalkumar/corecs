@@ -1,11 +1,13 @@
-package corecs.sorting;
+package corecs.sorting.quicksort;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class QuickSortPractice {
+public class QuickSort2WayLomutoPartition {
 	
 	public static void main(String[] args) {
+		
 		int[] arr = { 9, 5, 3, 4,10,1,2 };
+		//int[] arr = { 9, 5, 5, 3, 4, 10, 9, 1, 2, 3 };
 
 		System.out.print("Input UnSorted Array :: ");
 		for (int i : arr) {
