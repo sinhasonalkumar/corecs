@@ -1,4 +1,4 @@
-package corecs.sorting.quicksort;
+package corecs.sorting.quicksort.problem;
 
 public class DutchFlagSort {
 
