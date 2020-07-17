@@ -18,6 +18,15 @@ public class Adhoc {
 		
       //  System.out.println(s.substring(1,s.length()));
 		
+		Stack<Integer> s = new Stack<Integer>();
+		
+		s.push(1);
+		s.push(3);
+		
+		System.out.println(s.indexOf(s.peek()));
+		
+		System.out.println(s.size() -1);
+		
 	}
 
 
