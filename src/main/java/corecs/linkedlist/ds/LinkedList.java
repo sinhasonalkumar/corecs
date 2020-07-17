@@ -49,6 +49,14 @@ public class LinkedList {
 		}
 		
 	}
+	
+	public void addBefore(int pos, int data) {
+		
+	}
+	
+	public void delete(int n) {
+		
+	}
 
 	public void display() {
 
@@ -65,6 +73,31 @@ public class LinkedList {
 		}
 
 		System.out.println(curNode);
+	}
+	
+	public void reverse() {
+		
+		if(this.head == null) {
+			System.out.println("LinkedList is empty.");
+			return;
+		}
+		
+		Node prevNode = null;
+		
+		Node curNode = this.head;
+		
+		Node tmp = null;
+		
+		while(curNode.getNext() != null) {
+			
+			tmp = curNode.getNext();
+			curNode.setNext(prevNode);
+			prevNode = curNode;
+			curNode = tmp;
+		}
+		
+		curNode.setNext(prevNode);
+		this.head = curNode;
 	}
 
 }

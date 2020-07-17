@@ -17,5 +17,9 @@ public class LinkedListMain {
 		list.addAfterPos(3, 5);
 		
 		list.display();
+		
+		list.reverse();
+		
+		list.display();
 	}
 }
