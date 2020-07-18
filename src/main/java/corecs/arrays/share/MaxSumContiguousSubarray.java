@@ -1,4 +1,5 @@
-package corecs.arrays.maxsumcontiguoussubarray.kadane;
+package corecs.arrays.share;
+
 
 public class MaxSumContiguousSubarray {
 

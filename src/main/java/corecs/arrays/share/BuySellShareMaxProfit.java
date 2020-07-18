@@ -1,4 +1,4 @@
-package corecs.arrays;
+package corecs.arrays.share;
 
 /*
 
@@ -30,8 +30,9 @@ public class BuySellShareMaxProfit {
 		
 		//int[] sharePrices = {7,1,5,3,6,4};
 		//int[] sharePrices = {7,6,4,3,1};
-		int[] sharePrices = {7,2,5,3,1,6};
-		
+		//int[] sharePrices = {7,2,5,3,1,6};
+		//int[] sharePrices = {7,4,8,3,4};
+		  int[] sharePrices = {7,1,5,3,6,7};
 		
 		System.out.println("Max-Profit -> " + maxProfit(sharePrices));
 	}
