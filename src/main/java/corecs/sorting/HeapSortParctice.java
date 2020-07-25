@@ -38,7 +38,8 @@ public class HeapSortParctice {
 		}
 	}
 	private static void buildMaxHeap(int[] arr) {
-		for (int i = (arr.length -1 / 2); i >= 0; i--) {
+		//for (int i = (arr.length -1 / 2); i >= 0; i--) {
+		for (int i = (arr.length/2 - 1); i >= 0; i--) {
 			heapify(arr, arr.length-1, i);
 		}
 	}

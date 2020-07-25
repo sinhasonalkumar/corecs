@@ -1,4 +1,4 @@
-package corecs.arrays.word.substring.palindrome;
+package corecs.arrays.palindrome;
 
 
 public class LongestPalindromeSubStringFinder {
